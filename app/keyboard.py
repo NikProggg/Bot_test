@@ -38,6 +38,23 @@ async def in_diagnos():
         key_dia.add(InlineKeyboardButton(text=el, callback_data='dios'))
     return key_dia.adjust(2).as_markup()
 
+in_dia = ['Komputerowa 💻', 'Zawieszenie 🚗', 'Prszed zakupem 👀', 'Umow sie 📅']
+
+async def in_dia_el():
+    key = InlineKeyboardBuilder()
+    for i in in_dia:
+        key.add(InlineKeyboardButton(text=i, callback_data='elektronik'))
+    return key.adjust(2).as_markup()
+
+
+shop = ['Czesci 🔩', 'Sklep ⚜️', 'Kontakt z warsztatem 🏦']
+
+async def in_shop_dia():
+    key2 = InlineKeyboardBuilder()
+    for i in shop:
+        key2.add(InlineKeyboardButton(text=i, callback_data='shop-mech'))
+    return key2.adjust(2).as_markup()
+
 
 re_info = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text='Rejestracja 📋'),

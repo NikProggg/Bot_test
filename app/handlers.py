@@ -67,7 +67,18 @@ async def call_ol(callback: CallbackQuery):
 async def diagnostyka(callback: CallbackQuery):
     await callback.message.edit_caption(text='Hello',
                                         reply_markup=await kb.in_diagnos())
-    
+
+
+@router.callback_query(F.data == 'rem')
+async def ele(callback: CallbackQuery):
+    await callback.message.edit_caption(text='Jaku poczebujesz diagnostiki',
+                                        reply_markup=await kb.in_dia_el())
+
+
+@router.callback_query(F.data == 'mot')
+async def shop(callback: CallbackQuery):
+    await callback.message.edit_caption(text='Wybierz kategorije)',
+                                        reply_markup=await kb.in_shop_dia())
 
 
 @router.message(F.text == 'Informacje 📌')
